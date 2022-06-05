@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Image, StyleSheet, View, Alert, Text, Dimensions } from 'react-native';
+import { Image, StyleSheet, View, Alert, Text, Dimensions, TouchableWithoutFeedback } from 'react-native';
 import Orientation from '../helpers/Orientation';
 
 
@@ -19,7 +19,7 @@ function WelcomeScreen(props) {
 
         <View style={styles.background} >
             
-            <View style={styles.headerView}>
+            <View style={styles.headerView} top={orientation === 'portrait' ? 120 : 50}>
                 <Text style={styles.header}>adoption manager</Text>
             </View>
             
@@ -28,23 +28,25 @@ function WelcomeScreen(props) {
                     justifyContent: 'space-evenly', 
                     flexDirection: orientation === 'portrait' ? 'column' : 'row' ,
                     margin: 20,
-                    marginTop: orientation === 'portrait' ? 100 : 50 ,
+                    marginTop: orientation === 'portrait' ? 120 : 50 ,
             }}>
-                    <View
-                    onPress={() => Alert.alert('login pressed')}
-                    style={styles.button}
-                    width={orientation === 'portrait' ? '90%' : '40%'}
-                    >
-                        <Text style={styles.text}>Log In</Text>
-                    </View>
+                    <TouchableWithoutFeedback onPress={() => Alert.alert('login pressed')}>
+                        <View
+                        style={styles.button}
+                        width={orientation === 'portrait' ? '90%' : '40%'}
+                        >
+                            <Text style={styles.text}>Log In</Text>
+                        </View>
+                    </TouchableWithoutFeedback>
 
-                    <View
-                    onPress={() => Alert.alert('register pressed')}
-                    style={styles.button}
-                    width={orientation === 'portrait' ? '90%' : '40%'}
-                    >
-                        <Text style={styles.text}>Register</Text>
-                    </View>
+                    <TouchableWithoutFeedback onPress={() => Alert.alert('register pressed')}>
+                        <View
+                        style={styles.button}
+                        width={orientation === 'portrait' ? '90%' : '40%'}
+                        >
+                            <Text style={styles.text}>Register</Text>
+                        </View>
+                    </TouchableWithoutFeedback>
             </View>
 
             <Image 
@@ -80,9 +82,9 @@ const styles = StyleSheet.create({
     },
     header: {
         fontWeight: '900',
-        fontSize: 60,
+        fontSize: 30,
         padding: 10,
-        top: 60,
+        fontStyle: 'italic'
     },
     headerView: {
         alignItems: 'center',
