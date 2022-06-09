@@ -1,18 +1,41 @@
 import { StyleSheet, Text, View, KeyboardAvoidingView, TextInput, Image, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import { authentication } from '../firebase/firebase-config';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { useNavigation } from '@react-navigation/native';
 
 
 const LoginScreen = () => {
 
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const signIn = () => {
+    const navigation = useNavigation();
 
+    const signIn = () => {
+        signInWithEmailAndPassword(authentication, email, password)
+        .then((res) => {
+            setIsAuthenticated(true);
+            console.log(res);
+            navigation.navigate("AnimalsList");
+        })
+        .catch((er) => {
+            Alert.alert(er.message);
+            console.log(er);
+        })
+    }
+
+    const logout = () => {
+        signOut(authentication)
+        .then((re) => {
+            setIsAuthenticated(false);
+        })
+        .catch((er) => {
+            Alert.alert(er.message);
+            console.log(er);
+        })
     }
 
   return (
@@ -26,8 +49,8 @@ const LoginScreen = () => {
                 style={styles.input}
                 placeholder="Email."
                 placeholderTextColor="#bfbfbf"
-                onChangeText={(email) => setUsername(email)}
-                value={username}
+                onChangeText={(email) => setEmail(email)}
+                value={email}
             />
             </View>
             
@@ -48,7 +71,7 @@ const LoginScreen = () => {
 
             <TouchableOpacity 
                 style={styles.loginBtn}
-                // onPress= { }
+                onPress= { signIn }
             >
                 <Text style={styles.loginText}>LOGIN</Text>
             </TouchableOpacity>

@@ -1,7 +1,7 @@
-import { StyleSheet, Text, View, KeyboardAvoidingView, TextInput, Image, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, Alert, TextInput, Image, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import { authentication } from '../firebase/firebase-config';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigation } from '@react-navigation/native';
 
 
@@ -18,11 +18,12 @@ const RegisterScreen = () => {
         createUserWithEmailAndPassword(authentication, email, password)
         .then((res) => {
             console.log(res);
+            navigation.navigate("Login");
         })
         .catch((er) => {
+            Alert.alert(er.message);
             console.log(er);
         })
-        navigation.navigate("Login");
     }
 
   return (
