@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React, {useState, useEffect} from 'react';
 import { Image, StyleSheet, View, Alert, Text, Dimensions, TouchableWithoutFeedback } from 'react-native';
 import Orientation from '../helpers/Orientation';
@@ -9,11 +10,13 @@ function WelcomeScreen(props) {
         Orientation.isPortrait() ? 'portrait' : 'landscape'
       );
     
-      useEffect(() => {
+    useEffect(() => {
         Dimensions.addEventListener('change', () => {
           setOrientation(Orientation.isPortrait() ? 'portrait' : 'landscape');
         });
-      }, []);
+    }, []);
+
+    const navigation = useNavigation();
 
     return (
 
@@ -30,7 +33,7 @@ function WelcomeScreen(props) {
                     margin: 20,
                     marginTop: orientation === 'portrait' ? 120 : 50 ,
             }}>
-                    <TouchableWithoutFeedback onPress={() => Alert.alert('login pressed')}>
+                    <TouchableWithoutFeedback onPress={() => navigation.navigate("AnimalsList")}>
                         <View
                         style={styles.button}
                         width={orientation === 'portrait' ? '90%' : '40%'}
@@ -61,6 +64,7 @@ function WelcomeScreen(props) {
 const styles = StyleSheet.create({
     background: {
         flex: 1,
+        backgroundColor: '#ffffff'
     },
     image: {
         flex: 1,
