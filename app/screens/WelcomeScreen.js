@@ -2,9 +2,17 @@ import { useNavigation } from '@react-navigation/native';
 import React, {useState, useEffect} from 'react';
 import { Image, StyleSheet, View, Alert, Text, Dimensions, TouchableWithoutFeedback } from 'react-native';
 import Orientation from '../helpers/Orientation';
-
+// import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 function WelcomeScreen(props) {
+
+    // onAuthStateChanged(getAuth(), (user) => {
+    //     if (user) {
+    //       console.log(user);
+    //     } else {
+    //       console.log("signed out");
+    //     }
+    // });
 
     const [orientation, setOrientation] = useState(
         Orientation.isPortrait() ? 'portrait' : 'landscape'
@@ -33,7 +41,7 @@ function WelcomeScreen(props) {
                     margin: 20,
                     marginTop: orientation === 'portrait' ? 120 : 50 ,
             }}>
-                    <TouchableWithoutFeedback onPress={() => navigation.navigate("AnimalsList")}>
+                    <TouchableWithoutFeedback onPress={() => navigation.navigate("Login")}>
                         <View
                         style={styles.button}
                         width={orientation === 'portrait' ? '90%' : '40%'}
@@ -42,7 +50,7 @@ function WelcomeScreen(props) {
                         </View>
                     </TouchableWithoutFeedback>
 
-                    <TouchableWithoutFeedback onPress={() => Alert.alert('register pressed')}>
+                    <TouchableWithoutFeedback onPress={() => navigation.navigate("Register")}>
                         <View
                         style={styles.button}
                         width={orientation === 'portrait' ? '90%' : '40%'}
