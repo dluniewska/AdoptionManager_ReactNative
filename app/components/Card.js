@@ -12,19 +12,20 @@ export const Card = (props) => {
 
 const styles = StyleSheet.create({
     card: {
+      flex: 1,
       backgroundColor: '#fff',
       marginBottom: 10,
-      marginLeft: '2%',
-      marginRight: '2%',
       borderRadius: 15,
       overflow: 'hidden',
       width: '95%',
       shadowColor: '#000',
       shadowOpacity: 1,
       shadowOffset: {
-        width: 3,
-        height: 3
-      }
+        width: 10,
+        height: 10
+      },
+      alignSelf: 'center',
+      elevation: 5
     },
     cardImage: {
       width: '100%',
