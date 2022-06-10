@@ -2,17 +2,9 @@ import { useNavigation } from '@react-navigation/native';
 import React, {useState, useEffect} from 'react';
 import { Image, StyleSheet, View, Alert, Text, Dimensions, TouchableWithoutFeedback } from 'react-native';
 import Orientation from '../helpers/Orientation';
-// import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 function WelcomeScreen(props) {
-
-    // onAuthStateChanged(getAuth(), (user) => {
-    //     if (user) {
-    //       console.log(user);
-    //     } else {
-    //       console.log("signed out");
-    //     }
-    // });
 
     const [orientation, setOrientation] = useState(
         Orientation.isPortrait() ? 'portrait' : 'landscape'

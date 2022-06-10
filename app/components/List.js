@@ -14,7 +14,7 @@ export const List = () => {
           status: "Non",
           userId: null,
           organizationId: null,
-          image: "rat.jpg"
+          image: "ratjpg"
         },
         {
           animalId: 2,
@@ -25,7 +25,7 @@ export const List = () => {
           status: "Non",
           userId: null,
           organizationId: null,
-          image: "mouse.jpg"
+          image: "mousejpg"
         },
         {
           animalId: 3,
@@ -36,7 +36,7 @@ export const List = () => {
           status: "Non",
           userId: null,
           organizationId: null,
-          image: "rabbit.jpg"
+          image: "rabbitjpg"
         },
         {
           animalId: 4,
@@ -47,7 +47,7 @@ export const List = () => {
           status: "Non",
           userId: null,
           organizationId: null,
-          image: "guinea.jpg"
+          image: "guineajpg"
         },
         {
           animalId: 5,
@@ -58,7 +58,7 @@ export const List = () => {
           status: "Non",
           userId: null,
           organizationId: null,
-          image: "guinea.jpg"
+          image: "guineajpg"
         },
         {
           animalId: 6,
@@ -69,7 +69,7 @@ export const List = () => {
           status: "Non",
           userId: null,
           organizationId: null,
-          image: "rabbit.jpg"
+          image: "rabbitjpg"
         },
         {
           animalId: 7,
@@ -80,11 +80,11 @@ export const List = () => {
           status: "Non",
           userId: null,
           organizationId: null,
-          image: "rat.jpg"
+          image: "ratjpg"
         }
       ]);
 
-    const _renderItem = ({ item }) => (<Card key={item.animalId} name= {item.name} /> );
+    const _renderItem = ({ item }) => (<Card key={item.animalId} name= {item.name} status={item.status} image={item.image} /> );
 
     return (
         <View style={styles.cardContainer}>

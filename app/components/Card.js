@@ -1,11 +1,13 @@
 import React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import ImagesFiles from '../helpers/ImagesFiles';
 
 export const Card = (props) => {
   return (
     <TouchableOpacity style={styles.card}>
-        <Image source={require(`../assets/rat.jpg`)} style={styles.cardImage} />
+        <Image source={ImagesFiles[props.image]} style={styles.cardImage} />
         <Text style={styles.animalName}>{props.name}</Text>
+        <Text style={styles.status} >Status: {props.status}</Text>
     </TouchableOpacity>
   )
 }
@@ -33,7 +35,14 @@ const styles = StyleSheet.create({
       resizeMode: 'cover',
     },
     animalName: {
-        fontSize: 20,
-        padding: 10
+        fontSize: 25,
+        padding: 10,
+        paddingLeft: 20
+    },
+    status: {
+        fontSize: 16,
+        padding: 15,
+        paddingTop: 5,
+        paddingLeft: 20
     }
   });
