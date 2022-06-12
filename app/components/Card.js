@@ -1,15 +1,21 @@
 import React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import ImagesFiles from '../helpers/ImagesFiles';
+import { useNavigation } from '@react-navigation/native';
 
 export const Card = (props) => {
+
+  const navigation = useNavigation();
+
+  let Animal = props.animal;
+
   return (
-    <TouchableOpacity style={styles.card}>
-        <Image source={ImagesFiles[props.image]} style={styles.cardImage} />
-        <Text style={styles.animalName}>{props.name}</Text>
+    <TouchableOpacity style={styles.card} onPress={() => navigation.navigate("AnimalsDetails", {AnimalDetails: Animal})}>
+        <Image source={ImagesFiles[Animal.image]} style={styles.cardImage} />
+        <Text style={styles.animalName}>{Animal.name}</Text>
         <Text style={styles.organization}>
           <Text>Organization: </Text>
-          <Text style={styles.organizationName}>{props.organization}</Text>
+          <Text style={styles.organizationName}>{Animal.organization}</Text>
         </Text>
     </TouchableOpacity>
   )

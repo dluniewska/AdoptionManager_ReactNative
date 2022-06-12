@@ -5,6 +5,7 @@ import WelcomeScreen from '../screens/WelcomeScreen';
 import { ListScreen } from '../screens/ListScreen';
 import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
+import { AnimalDetailsScreen } from '../screens/AnimalDetailsScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,7 @@ export const RoutesStack = () => {
         <Stack.Screen name="AnimalsList" component={ListScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Register" component={RegisterScreen} />
+        <Stack.Screen name="AnimalsDetails" component={AnimalDetailsScreen} />
       </Stack.Navigator>
   );
 };
