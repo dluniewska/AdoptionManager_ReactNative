@@ -13,7 +13,7 @@ export const List = () => {
           dateOfBirth: "2021-06-05",
           status: "Non",
           userId: null,
-          organizationId: null,
+          organization: "LabRescue",
           image: "ratjpg"
         },
         {
@@ -24,7 +24,7 @@ export const List = () => {
           dateOfBirth: "2021-06-05",
           status: "Non",
           userId: null,
-          organizationId: null,
+          organization: "LabRescue",
           image: "mousejpg"
         },
         {
@@ -35,7 +35,7 @@ export const List = () => {
           dateOfBirth: "2021-06-05",
           status: "Non",
           userId: null,
-          organizationId: null,
+          organization: "Tri-City Animal Facility",
           image: "rabbitjpg"
         },
         {
@@ -46,7 +46,7 @@ export const List = () => {
           dateOfBirth: "2021-06-05",
           status: "Non",
           userId: null,
-          organizationId: null,
+          organization: "LabRescue",
           image: "guineajpg"
         },
         {
@@ -57,7 +57,7 @@ export const List = () => {
           dateOfBirth: "2021-06-05",
           status: "Non",
           userId: null,
-          organizationId: null,
+          organization: "Tri-City Animal Facility",
           image: "guineajpg"
         },
         {
@@ -68,7 +68,7 @@ export const List = () => {
           dateOfBirth: "2021-06-05",
           status: "Non",
           userId: null,
-          organizationId: null,
+          organization: "Nencki Institute",
           image: "rabbitjpg"
         },
         {
@@ -79,12 +79,12 @@ export const List = () => {
           dateOfBirth: "2021-06-05",
           status: "Non",
           userId: null,
-          organizationId: null,
+          organization: "Nencki Institute",
           image: "ratjpg"
         }
       ]);
 
-    const _renderItem = ({ item }) => (<Card key={item.animalId} name= {item.name} status={item.status} image={item.image} /> );
+    const _renderItem = ({ item }) => (<Card key={item.animalId} name= {item.name} organization={item.organization} image={item.image} /> );
 
     return (
         <View style={styles.cardContainer}>

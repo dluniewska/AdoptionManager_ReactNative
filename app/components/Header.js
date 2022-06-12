@@ -12,9 +12,20 @@ export const Header = (props) => {
 const styles = StyleSheet.create({
     headerContainer: {
         width: '100%',
-        height: '10%',
-        justifyContent: 'center',
-        marginTop: 30
+        height: '8%',
+        justifyContent: 'flex-end',
+        marginTop: 35,
+        backgroundColor: '#fff',
+        paddingBottom: 25,
+        shadowColor: '#000',
+        shadowOpacity: 1,
+        shadowOffset: {
+          width: 10,
+          height: 10
+        },
+        elevation: 5,
+        overflow: 'visible',
+        zIndex: 1
     },
     headerText: {
         fontSize: 25,

@@ -7,7 +7,10 @@ export const Card = (props) => {
     <TouchableOpacity style={styles.card}>
         <Image source={ImagesFiles[props.image]} style={styles.cardImage} />
         <Text style={styles.animalName}>{props.name}</Text>
-        <Text style={styles.status} >Status: {props.status}</Text>
+        <Text style={styles.organization}>
+          <Text>Organization: </Text>
+          <Text style={styles.organizationName}>{props.organization}</Text>
+        </Text>
     </TouchableOpacity>
   )
 }
@@ -36,13 +39,16 @@ const styles = StyleSheet.create({
     },
     animalName: {
         fontSize: 25,
-        padding: 10,
+        paddingTop: 15,
         paddingLeft: 20
     },
-    status: {
+    organization: {
         fontSize: 16,
         padding: 15,
         paddingTop: 5,
         paddingLeft: 20
+    },
+    organizationName: {
+      fontWeight: '500'
     }
   });
