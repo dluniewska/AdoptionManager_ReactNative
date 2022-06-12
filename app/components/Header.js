@@ -12,7 +12,7 @@ export const Header = (props) => {
 const styles = StyleSheet.create({
     headerContainer: {
         width: '100%',
-        height: '8%',
+        height: '10%',
         justifyContent: 'flex-end',
         marginTop: 35,
         backgroundColor: '#fff',

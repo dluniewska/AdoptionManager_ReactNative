@@ -90,6 +90,7 @@ export const List = () => {
         <View style={styles.cardContainer}>
             <FlatList 
             data={Animals}
+            contentContainerStyle={{ paddingBottom: 20 }}
             keyExtractor={(item) => item.animalId}
             renderItem={_renderItem}
             />
@@ -100,6 +101,6 @@ export const List = () => {
 const styles = StyleSheet.create({
     cardContainer: {
         backgroundColor: '#ffe6e6',
-        paddingTop: 20
+        paddingTop: 20,
     }
   });
