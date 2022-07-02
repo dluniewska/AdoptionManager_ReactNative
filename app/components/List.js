@@ -2,84 +2,63 @@ import React, { useState } from 'react';
 import { View, FlatList, StyleSheet } from 'react-native';
 import { Card } from './Card';
 
-export const Animals = [
-  {
-    animalId: 2,
-    name: "Mouse",
-    species: "Mouse",
-    kind: "Black",
-    dateOfBirth: "2021-06-05",
-    status: "Non",
-    userId: null,
-    organization: "LabRescue",
-    image: "mousejpg"
-  },
-  {
-    animalId: 1,
-    name: "Rat",
-    species: "Rat",
-    kind: "Wistar",
-    dateOfBirth: "2021-06-05",
-    status: "Non",
-    userId: null,
-    organization: "LabRescue",
-    image: "ratjpg"
-  },
-  {
-    animalId: 3,
-    name: "Rabbit",
-    species: "Rabbit",
-    kind: "Stinky",
-    dateOfBirth: "2021-06-05",
-    status: "Non",
-    userId: null,
-    organization: "Tri-City Animal Facility",
-    image: "rabbitjpg"
-  },
-  {
-    animalId: 4,
-    name: "GuineaPig",
-    species: "Guinea Pig",
-    kind: "Happy",
-    dateOfBirth: "2021-06-05",
-    status: "Non",
-    userId: null,
-    organization: "LabRescue",
-    image: "guineajpg"
-  },
-  {
-    animalId: 5,
-    name: "GuineaPig2",
-    species: "Guinea Pig",
-    kind: "Happy",
-    dateOfBirth: "2021-06-05",
-    status: "Non",
-    userId: null,
-    organization: "Tri-City Animal Facility",
-    image: "guineajpg"
-  },
-  {
-    animalId: 6,
-    name: "Rabbit2",
-    species: "Rabbit",
-    kind: "Stinky",
-    dateOfBirth: "2021-06-05",
-    status: "Non",
-    userId: null,
-    organization: "Nencki Institute",
-    image: "rabbitjpg"
-  },
-  {
-    animalId: 7,
-    name: "Rat2",
-    species: "Rat",
-    kind: "Wistar",
-    dateOfBirth: "2021-06-05",
-    status: "Non",
-    userId: null,
-    organization: "Nencki Institute",
-    image: "ratjpg"
-  }
+export const Animals =
+  [
+    {
+      "animalId": 1,
+      "name": "Piggy",
+      "species": "Świnka Morska",
+      "details": "Świnka morska po testach nie wpływających na jej zdrowie",
+      "age": "1 rok",
+      "createdAt": "2022-07-02",
+      "quantity": 2,
+      "organizationId": 1,
+      "image": "guineajpg"
+    },
+    {
+      "animalId": 2,
+      "name": "Ratty",
+      "species": "Szczurki",
+      "details": "Szczury szczepu Wistar (albinosy), z nadwyżki hodowlanej ",
+      "age": "3-7 miesięcy",
+      "createdAt": "2022-07-02",
+      "quantity": 60,
+      "organizationId": 1,
+      "image": "ratjpg"
+    },
+    {
+      "animalId": 3,
+      "name": "Mousy",
+      "species": "Myszki",
+      "details": "Czarne myszki po testach behawioralnych",
+      "age": "7 miesięcy",
+      "createdAt": "2022-07-02",
+      "quantity": 30,
+      "organizationId": 1,
+      "image": "mousejpg"
+    },
+    {
+      "animalId": 4,
+      "name": "Two rabbits",
+      "species": "Króliki",
+      "details": "Króliki albinosy po testach behawioralnych",
+      "age": "5 miesięcy",
+      "createdAt": "2022-07-02",
+      "quantity": 2,
+      "organizationId": 1,
+      "image": "rabbitjpg"
+    },
+    {
+      "animalId": 5,
+      "name": "Białe myszki",
+      "species": "Myszy albinosy",
+      "details": "Białe myszy pochodzące z nadwyżki hodowlanej",
+      "age": "2 miesiące",
+      "createdAt": "2022-07-02",
+      "quantity": 12,
+      "organizationId": 1,
+      "image": "ratpng"
+    }
 ];
 
 export const List = () => {

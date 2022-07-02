@@ -14,8 +14,8 @@ export const Card = (props) => {
         <Image source={ImagesFiles[Animal.image]} style={styles.cardImage} />
         <Text style={styles.animalName}>{Animal.name}</Text>
         <Text style={styles.organization}>
-          <Text>Organization: </Text>
-          <Text style={styles.organizationName}>{Animal.organization}</Text>
+          <Text>Ilość: </Text>
+          <Text style={styles.organizationName}>{Animal.quantity}</Text>
         </Text>
     </TouchableOpacity>
   )

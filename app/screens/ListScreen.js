@@ -7,7 +7,7 @@ export const ListScreen = () => {
 
   return (
     <SafeAreaView style={styles.listView}>
-      <Header title='Animals waiting for a new home!'/>
+      <Header title='Zwierzęta czekające na nowy dom!'/>
       <List />
     </SafeAreaView>
   )

@@ -18,31 +18,27 @@ export const AnimalsDetails = (props) => {
             </View>
             <View style={styles.detailsList}>
                 <Text style={styles.detail}>
-                    <Text style={styles.detailsTitle}>Organization: </Text>
-                    <Text>{animal.organization}</Text>
-                </Text>
-                <Text style={styles.detail}>
-                    <Text style={styles.detailsTitle}>Species: </Text>
+                    <Text style={styles.detailsTitle}>Gatunek: </Text>
                     <Text>{animal.species}</Text>
                 </Text>
                 <Text style={styles.detail} >
-                    <Text style={styles.detailsTitle}>Kind: </Text>
-                    <Text>{animal.kind}</Text>
+                    <Text style={styles.detailsTitle}>Wiek: </Text>
+                    <Text>{animal.age}</Text>
                 </Text>
                 <Text style={styles.detail}>
-                    <Text style={styles.detailsTitle}>Date of Birth: </Text>
-                    <Text >{animal.dateOfBirth}</Text>
+                    <Text style={styles.detailsTitle}>Szczegóły: </Text>
+                    <Text >{animal.details}</Text>
                 </Text>
                 <Text style={styles.detail}>
-                    <Text style={styles.detailsTitle}>Status: </Text>
-                    <Text>{animal.status}</Text>
+                    <Text style={styles.detailsTitle}>Ilość: </Text>
+                    <Text>{animal.quantity}</Text>
                 </Text>                
             </View>
             <TouchableOpacity style={styles.buttonContainer} onPress={() => Alert.alert("You Adopted Animal!", "Bravo! You saved one little-big life!")}>
                         <View
                         style={styles.button}
                         >
-                            <Text style={styles.buttonText}>ADOPT!</Text>
+                            <Text style={styles.buttonText}>ADOPTUJ!</Text>
                         </View>
             </TouchableOpacity>
         </View>
